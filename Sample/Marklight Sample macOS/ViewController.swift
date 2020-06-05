@@ -20,8 +20,6 @@ class ViewController: NSViewController {
         textStorage.marklightTextProcessor.codeColor = NSColor.systemOrange
         textStorage.marklightTextProcessor.quoteColor = NSColor.systemGreen
         textStorage.marklightTextProcessor.syntaxColor = NSColor.systemBlue
-        textStorage.marklightTextProcessor.codeFontName = "Courier"
-        textStorage.marklightTextProcessor.textSize = 18.0
         textStorage.marklightTextProcessor.hideSyntax = false
 
         textView.layoutManager?.replaceTextStorage(textStorage)

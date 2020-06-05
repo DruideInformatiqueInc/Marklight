@@ -151,9 +151,9 @@ public struct Marklight {
     public static var syntaxColor = MarklightColor.syntaxColor
     
     /**
-     Font used for blocks and inline code. Default value is *Menlo*.
+     Font used for blocks and inline code. Default value is a monospaced font,
      */
-    public static var codeFontName = "Menlo"
+    public static var codeFont = MarklightFont.monospacedFont
     
     /**
      Color used for blocks and inline code. Default value is dark grey.
@@ -161,10 +161,20 @@ public struct Marklight {
     public static var codeColor = MarklightColor.codeColor
     
     /**
-     Font used for quote blocks. Default value is *Menlo*.
+     Font used for quote blocks. Default value is a monospaced font.
      */
-    public static var quoteFontName = "Menlo"
-    
+    public static var quoteFont = MarklightFont.monospacedFont
+
+    /**
+     Font used for quote blocks. Default value is a bold monospaced font.
+     */
+    public static var boldFont = MarklightFont.monospacedFont.bold()
+
+    /**
+     Font used for quote blocks. Default value is a italic monospaced font.
+     */
+    public static var italicFont = MarklightFont.monospacedFont.italic()
+
     /**
      Color used for quote blocks. Default value is dark grey.
      */
@@ -179,29 +189,6 @@ public struct Marklight {
      If the markdown syntax should be hidden or visible
      */
     public static var hideSyntax = false
-    
-    /**
-     Text size measured in points.
-     */
-    public static var textSize: CGFloat = MarklightFont.systemFontSize
-    
-    // We transform the user provided `codeFontName` `String` to a `NSFont`
-    fileprivate static func codeFont(_ size: CGFloat) -> MarklightFont {
-        if let font = MarklightFont(name: Marklight.codeFontName, size: size) {
-            return font
-        } else {
-            return MarklightFont.systemFont(ofSize: size)
-        }
-    }
-    
-    // We transform the user provided `quoteFontName` `String` to a `NSFont`
-    fileprivate static func quoteFont(_ size: CGFloat) -> MarklightFont {
-        if let font = MarklightFont(name: Marklight.quoteFontName, size: size) {
-            return font
-        } else {
-            return MarklightFont.systemFont(ofSize: size)
-        }
-    }
     
     // Transform the quote indentation in the `NSParagraphStyle` required to set
     //  the attribute on the `NSAttributedString`.
@@ -227,10 +214,10 @@ public struct Marklight {
         let textStorageNSString = string as NSString
         let wholeRange = NSMakeRange(0, textStorageNSString.length)
         
-        let codeFont = Marklight.codeFont(textSize)
-        let quoteFont = Marklight.quoteFont(textSize)
-        let boldFont = MarklightFont.boldSystemFont(ofSize: textSize)
-        let italicFont = MarklightFont.italicSystemFont(ofSize: textSize)
+        let codeFont = Marklight.codeFont
+        let quoteFont = Marklight.quoteFont
+        let boldFont = Marklight.boldFont
+        let italicFont = Marklight.italicFont
         
         let hiddenFont = MarklightFont.systemFont(ofSize: 0.1)
         let hiddenColor = MarklightColor.clear

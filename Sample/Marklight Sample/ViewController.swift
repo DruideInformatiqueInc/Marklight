@@ -27,7 +27,6 @@ class ViewController: UIViewController, UITextViewDelegate {
         textStorage.marklightTextProcessor.codeColor = UIColor.systemOrange
         textStorage.marklightTextProcessor.quoteColor = UIColor.systemGreen
         textStorage.marklightTextProcessor.syntaxColor = UIColor.systemBlue
-        textStorage.marklightTextProcessor.codeFontName = "Courier"
         textStorage.marklightTextProcessor.fontTextStyle = UIFontTextStyle.subheadline.rawValue
         textStorage.marklightTextProcessor.hideSyntax = false
         

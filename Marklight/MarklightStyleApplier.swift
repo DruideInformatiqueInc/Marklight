@@ -13,5 +13,5 @@ public protocol MarklightStyleApplier {
     func addAttribute(_ name: NSAttributedString.Key, value: Any, range: NSRange)
     func addAttributes(_ attrs: [NSAttributedString.Key : Any], range: NSRange)
     func removeAttribute(_ name: NSAttributedString.Key, range: NSRange)
-    func resetMarklightTextAttributes(textSize: CGFloat, range: NSRange)
+    func resetMarklightTextAttributes(range: NSRange)
 }

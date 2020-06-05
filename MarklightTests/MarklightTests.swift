@@ -46,8 +46,7 @@ class MarklightTests: XCTestCase {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.font, at: 2, effectiveRange: &range!) as? UIFont {
-            let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize
-            XCTAssert(attribute == UIFont.boldSystemFont(ofSize: textSize))
+            XCTAssert(attribute == MarklightFont.monospacedBoldFont)
             XCTAssert(range?.length == 8)
         } else {
             XCTFail()
@@ -60,8 +59,7 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.font, at: 2, effectiveRange: &range!) as? UIFont {
-            let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize
-            XCTAssert(attribute == UIFont.boldSystemFont(ofSize: textSize))
+            XCTAssert(attribute == MarklightFont.monospacedBoldFont)
             XCTAssert(range?.length == 7)
         } else {
             XCTFail()
@@ -74,8 +72,7 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.font, at: 2, effectiveRange: &range!) as? UIFont {
-            let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize
-            XCTAssert(attribute == UIFont.boldSystemFont(ofSize: textSize))
+            XCTAssert(attribute == MarklightFont.monospacedBoldFont)
             XCTAssert(range?.length == 7)
         } else {
             XCTFail()
@@ -175,8 +172,7 @@ class MarklightTests: XCTestCase {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.font, at: 3, effectiveRange: &range!) as? UIFont {
-            let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize
-            XCTAssert(attribute == UIFont(name: "Menlo", size: textSize))
+            XCTAssert(attribute == MarklightFont.monospacedFont)
             XCTAssert(range?.length == 22)
         } else {
             XCTFail()
@@ -201,8 +197,7 @@ class MarklightTests: XCTestCase {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.font, at: 0, effectiveRange: &range!) as? UIFont {
-            let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize
-            XCTAssert(attribute == UIFont(name: "Menlo", size: textSize))
+            XCTAssert(attribute == MarklightFont.monospacedFont)
             XCTAssert(range?.length == 33)
         } else {
             XCTFail()
@@ -221,8 +216,7 @@ class MarklightTests: XCTestCase {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.font, at: 30, effectiveRange: &range!) as? UIFont {
-            let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize
-            XCTAssert(attribute == UIFont(name: "Menlo", size: textSize))
+            XCTAssert(attribute == MarklightFont.monospacedFont)
             XCTAssert(range?.length == 4)
         } else {
             XCTFail()
@@ -266,8 +260,7 @@ class MarklightTests: XCTestCase {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.font, at: 1, effectiveRange: &range!) as? UIFont {
-            let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize
-            XCTAssert(attribute == UIFont.italicSystemFont(ofSize: textSize))
+            XCTAssert(attribute == MarklightFont.monospacedItalicFont)
             XCTAssert(range?.length == 6)
         } else {
             XCTFail()

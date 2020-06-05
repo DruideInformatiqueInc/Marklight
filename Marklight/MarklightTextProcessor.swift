@@ -23,9 +23,14 @@ open class MarklightTextProcessor {
     open var syntaxColor = MarklightColor.syntaxColor
 
     /**
-     Font used for blocks and inline code. Default value is *Menlo*.
+     Default font used for normal text. Default value is a monospaced font
      */
-    open var codeFontName = "Menlo"
+    open var defaultFont = MarklightFont.monospacedFont
+
+    /**
+     Font used for blocks and inline code. Default value is a monospaced font
+     */
+    open var codeFont = MarklightFont.monospacedFont
 
     /**
      `MarklightColor` used for blocks and inline code. Default value is dark grey.
@@ -33,9 +38,9 @@ open class MarklightTextProcessor {
     open var codeColor = MarklightColor.codeColor
 
     /**
-     Font used for quote blocks. Default value is *Menlo*.
+     Font used for quote blocks. Default value is a monospaced font
      */
-    open var quoteFontName = "Menlo"
+    open var quoteFont = MarklightFont.monospacedFont
 
     /**
      `MarklightColor` used for quote blocks. Default value is dark grey.
@@ -67,12 +72,11 @@ open class MarklightTextProcessor {
         let editedAndAdjacentParagraphRange = self.editedAndAdjacentParagraphRange(in: string, editedRange: editedRange)
 
         Marklight.syntaxColor = syntaxColor
-        Marklight.codeFontName = codeFontName
+        Marklight.codeFont = codeFont
         Marklight.codeColor = codeColor
-        Marklight.quoteFontName = quoteFontName
+        Marklight.quoteFont = quoteFont
         Marklight.quoteColor = quoteColor
         Marklight.quoteIndendation = quoteIndendation
-        Marklight.textSize = textSize
         Marklight.hideSyntax = hideSyntax
 
         resetMarklightAttributes(
@@ -114,9 +118,7 @@ open class MarklightTextProcessor {
 
     fileprivate func resetMarklightAttributes(styleApplier: MarklightStyleApplier, range: NSRange) {
 
-        styleApplier.resetMarklightTextAttributes(
-            textSize: self.textSize,
-            range: range)
+        styleApplier.resetMarklightTextAttributes(range: range)
     }
 
     #if os(iOS)
@@ -129,13 +131,6 @@ open class MarklightTextProcessor {
      - see: [Text Styles](xcdoc://?url=developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/doc/constant_group/Text_Styles)
      */
     open var fontTextStyle : String = UIFont.TextStyle.body.rawValue
-
-    /// Text size measured in points.
-    fileprivate var textSize: CGFloat {
-        return MarklightFontDescriptor
-            .preferredFontDescriptor(withTextStyle: UIFont.TextStyle(rawValue: self.fontTextStyleValidated))
-            .pointSize
-    }
 
     // We are validating the user provided fontTextStyle `String` to match the
     // system supported ones.
@@ -168,10 +163,6 @@ open class MarklightTextProcessor {
         
         return self.fontTextStyle
     }
-
-    #elseif os(macOS)
-
-    open var textSize: CGFloat = NSFont.systemFontSize
 
     #endif
 }
