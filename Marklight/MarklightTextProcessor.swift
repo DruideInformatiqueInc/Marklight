@@ -20,7 +20,7 @@ open class MarklightTextProcessor {
     /**
      Color used to highlight markdown syntax. Default value is light grey.
      */
-    open var syntaxColor = MarklightColor.lightGray
+    open var syntaxColor = MarklightColor.syntaxColor
 
     /**
      Font used for blocks and inline code. Default value is *Menlo*.
@@ -30,7 +30,7 @@ open class MarklightTextProcessor {
     /**
      `MarklightColor` used for blocks and inline code. Default value is dark grey.
      */
-    open var codeColor = MarklightColor.darkGray
+    open var codeColor = MarklightColor.codeColor
 
     /**
      Font used for quote blocks. Default value is *Menlo*.
@@ -40,7 +40,7 @@ open class MarklightTextProcessor {
     /**
      `MarklightColor` used for quote blocks. Default value is dark grey.
      */
-    open var quoteColor = MarklightColor.darkGray
+    open var quoteColor = MarklightColor.quoteColor
 
     /**
      Quote indentation in points. Default 20.

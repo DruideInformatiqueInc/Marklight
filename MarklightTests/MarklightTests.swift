@@ -27,7 +27,7 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()
@@ -40,7 +40,7 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 2)
         } else {
             XCTFail()
@@ -88,13 +88,13 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 8, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 2)
         } else {
             XCTFail()
@@ -108,13 +108,13 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, string.lengthOfBytes(using: .utf8))
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 8, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()
@@ -127,13 +127,13 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 8, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             // TODO: exetend test
             XCTAssert(range?.length == 2)
         } else {
@@ -149,13 +149,13 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, string.lengthOfBytes(using: .utf8))
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 2)
         } else {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 9, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             // TODO: exetend test
             XCTAssert(range?.length == 2)
         } else {
@@ -169,7 +169,7 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 3)
         } else {
             XCTFail()
@@ -182,7 +182,7 @@ class MarklightTests: XCTestCase {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 25, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 3)
         } else {
             XCTFail()
@@ -195,7 +195,7 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.darkGray)
+            XCTAssert(attribute == MarklightColor.codeColor)
             XCTAssert(range?.length == 33)
         } else {
             XCTFail()
@@ -215,7 +215,7 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 29, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()
@@ -228,7 +228,7 @@ class MarklightTests: XCTestCase {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 34, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()
@@ -241,13 +241,13 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, 1)
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 2)
         } else {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 24, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 2)
         } else {
             XCTFail()
@@ -260,7 +260,7 @@ class MarklightTests: XCTestCase {
         self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
         var range : NSRange? = NSMakeRange(0, string.lengthOfBytes(using: .utf8))
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()
@@ -273,7 +273,7 @@ class MarklightTests: XCTestCase {
             XCTFail()
         }
         if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 7, effectiveRange: &range!) as? UIColor {
-            XCTAssert(attribute == UIColor.lightGray)
+            XCTAssert(attribute == MarklightColor.syntaxColor)
             XCTAssert(range?.length == 1)
         } else {
             XCTFail()

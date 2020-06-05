@@ -17,9 +17,9 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        textStorage.marklightTextProcessor.codeColor = NSColor.orange
-        textStorage.marklightTextProcessor.quoteColor = NSColor.darkGray
-        textStorage.marklightTextProcessor.syntaxColor = NSColor.blue
+        textStorage.marklightTextProcessor.codeColor = NSColor.systemOrange
+        textStorage.marklightTextProcessor.quoteColor = NSColor.systemGreen
+        textStorage.marklightTextProcessor.syntaxColor = NSColor.systemBlue
         textStorage.marklightTextProcessor.codeFontName = "Courier"
         textStorage.marklightTextProcessor.textSize = 18.0
         textStorage.marklightTextProcessor.hideSyntax = false

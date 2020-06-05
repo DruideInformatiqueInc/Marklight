@@ -10,12 +10,14 @@ Pod::Spec.new do |s|
   s.author                = { "Matteo Gavagnin" => "m@macteo.it" }
   s.social_media_url      = "https://twitter.com/macteo"
 
-  s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.11"
+  s.ios.deployment_target = "11.0"
+  s.osx.deployment_target = "10.13"
 
   s.source                = { :git => "https://github.com/macteo/Marklight.git", :tag => "v#{s.version}" }
   s.source_files          = "Marklight/**/*.{swift}"
   s.requires_arc          = true
+  
+  s.resources             = "Assets/*.xcassets"
   
   s.swift_version         = '4.2'
 end

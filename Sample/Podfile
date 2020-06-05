@@ -5,10 +5,10 @@ abstract_target 'Marklight' do
   pod 'Marklight', :path => '..'
   
   target 'Marklight Sample' do
-    platform :ios, '8.0'
+    platform :ios, '11.0'
   end
   
   target 'Marklight Sample macOS' do
-    platform :osx, '10.11'
+    platform :osx, '10.13'
   end
 end

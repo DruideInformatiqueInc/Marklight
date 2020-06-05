@@ -148,7 +148,7 @@ public struct Marklight {
     /**
      Color used to highlight markdown syntax. Default value is light grey.
      */
-    public static var syntaxColor = MarklightColor.lightGray
+    public static var syntaxColor = MarklightColor.syntaxColor
     
     /**
      Font used for blocks and inline code. Default value is *Menlo*.
@@ -158,7 +158,7 @@ public struct Marklight {
     /**
      Color used for blocks and inline code. Default value is dark grey.
      */
-    public static var codeColor = MarklightColor.darkGray
+    public static var codeColor = MarklightColor.codeColor
     
     /**
      Font used for quote blocks. Default value is *Menlo*.
@@ -168,7 +168,7 @@ public struct Marklight {
     /**
      Color used for quote blocks. Default value is dark grey.
      */
-    public static var quoteColor = MarklightColor.darkGray
+    public static var quoteColor = MarklightColor.quoteColor
     
     /**
      Quote indentation in points. Default 20.

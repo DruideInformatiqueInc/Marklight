@@ -9,16 +9,31 @@
 #if os(iOS)
     import UIKit
 
-    typealias MarklightColor = UIColor
-    typealias MarklightFont = UIFont
-    typealias MarklightFontDescriptor = UIFontDescriptor
+    public typealias MarklightColor = UIColor
+    public typealias MarklightFont = UIFont
+    public typealias MarklightFontDescriptor = UIFontDescriptor
+
+    extension UIColor {
+        typealias Name = String
+        
+        public convenience init?(named: String, bundle: Bundle?) {
+					self.init(named: named, in: bundle, compatibleWith: nil)
+				}
+				
+				static var textColor: UIColor {
+					if #available(iOS 13.0, *) {
+						return self.label
+					} else {
+						return self.black
+					}
+				}
+    }
 #elseif os(macOS)
     import AppKit
 
-
-    typealias MarklightColor = NSColor
-    typealias MarklightFont = NSFont
-    typealias MarklightFontDescriptor = NSFontDescriptor
+    public typealias MarklightColor = NSColor
+    public typealias MarklightFont = NSFont
+    public typealias MarklightFontDescriptor = NSFontDescriptor
 
     extension NSFont {
         static func italicSystemFont(ofSize size: CGFloat) -> NSFont {
@@ -26,3 +41,19 @@
         }
     }
 #endif
+
+class MarklightColorStub {}
+
+public extension MarklightColor {
+    static var syntaxColor: MarklightColor {
+        return MarklightColor(named: MarklightColor.Name("Syntax"), bundle: Bundle(for: MarklightColorStub.self))!
+    }
+
+    static var codeColor: MarklightColor {
+        return MarklightColor(named: MarklightColor.Name("Code"), bundle: Bundle(for: MarklightColorStub.self))!
+    }
+
+    static var quoteColor: MarklightColor {
+        return MarklightColor(named: MarklightColor.Name("Quote"), bundle: Bundle(for: MarklightColorStub.self))!
+    }
+}
