@@ -3,8 +3,8 @@
 Markdown syntax highlighter for iOS and macOS.
 
 [![License MIT](https://img.shields.io/cocoapods/l/Marklight.svg)](https://raw.githubusercontent.com/macteo/marklight/master/LICENSE) [![Version](https://img.shields.io/cocoapods/v/Marklight.svg)](https://cocoapods.org/?q=marklight) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![travis-ci](https://travis-ci.org/macteo/Marklight.svg?branch=master)](https://travis-ci.org/macteo/Marklight)
-[![codecov.io](https://codecov.io/github/macteo/Marklight/coverage.svg?branch=feature/swift4)](https://codecov.io/github/macteo/Marklight?branch=master)
-![Swift 4.1](https://img.shields.io/badge/language-Swift%204.1-EB7943.svg) ![iOS 8+](https://img.shields.io/badge/iOS-8+-EB7943.svg)
+[![codecov.io](https://codecov.io/github/macteo/Marklight/coverage.svg?branch=feature/swift5)](https://codecov.io/github/macteo/Marklight?branch=master)
+![Swift 5.0](https://img.shields.io/badge/language-Swift%205.0-EB7943.svg) ![iOS 11+](https://img.shields.io/badge/iOS-11+-EB7943.svg)
 
 ## Description
 
@@ -34,9 +34,9 @@ Regular expressions are taken from [Markingbird](https://github.com/kristopherjo
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 9.3+
-- macOS 10.11+
+- iOS 11.0+
+- Xcode 11.0+
+- macOS 10.13+
 
 ## Installation
 
@@ -54,7 +54,7 @@ To integrate Marklight into your Xcode project using CocoaPods, specify it in yo
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '11.0'
 use_frameworks!
 
 pod 'Marklight'
