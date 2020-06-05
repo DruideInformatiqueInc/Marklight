@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         textStorage.marklightTextProcessor.codeColor = UIColor.systemOrange
         textStorage.marklightTextProcessor.quoteColor = UIColor.systemGreen
         textStorage.marklightTextProcessor.syntaxColor = UIColor.systemBlue
-        textStorage.marklightTextProcessor.fontTextStyle = UIFontTextStyle.subheadline.rawValue
+        textStorage.marklightTextProcessor.fontTextStyle = UIFont.TextStyle.subheadline.rawValue
         textStorage.marklightTextProcessor.hideSyntax = false
         
         let layoutManager = NSLayoutManager()
@@ -59,7 +59,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         view.addConstraint(bottomTextViewConstraint)
         
         // Add a beautiful padding to the `UITextView` content
-        textView.textContainerInset = UIEdgeInsetsMake(4, 4, 4, 4)
+        textView.textContainerInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
         textView.delegate = self
         textView.isEditable = true
         
@@ -78,11 +78,11 @@ class ViewController: UIViewController, UITextViewDelegate {
         }
         
         // We do some magic to resize the `UITextView` to react the the keyboard size change (appearance, disappearance, ecc)
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: OperationQueue.main) { (notification) -> Void in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: OperationQueue.main) { (notification) -> Void in
             
-            let initialRect = ((notification as NSNotification).userInfo![UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue
+            let initialRect = ((notification as NSNotification).userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue
             let _ = self.view.frame.size.height - self.view.convert(initialRect!, from: nil).origin.y
-            let keyboardRect = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+            let keyboardRect = ((notification as NSNotification).userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
             let newHeight = self.view.frame.size.height - self.view.convert(keyboardRect!, from: nil).origin.y
             
             guard let bottomTextViewConstraint = self.bottomTextViewConstraint else { return }
@@ -90,10 +90,10 @@ class ViewController: UIViewController, UITextViewDelegate {
             
             textView.setNeedsUpdateConstraints()
             
-            let duration = ((notification as NSNotification).userInfo![UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
-            let curve = ((notification as NSNotification).userInfo![UIKeyboardAnimationCurveUserInfoKey] as AnyObject).uintValue
+            let duration = ((notification as NSNotification).userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
+            let curve = ((notification as NSNotification).userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as AnyObject).uintValue
             
-            UIView.animate(withDuration: duration!, delay: 0, options: [UIViewAnimationOptions(rawValue: curve!), .beginFromCurrentState], animations: { () -> Void in
+            UIView.animate(withDuration: duration!, delay: 0, options: [UIView.AnimationOptions(rawValue: curve!), .beginFromCurrentState], animations: { () -> Void in
                 textView.layoutIfNeeded()
                 }, completion: { (finished) -> Void in
                     
@@ -101,7 +101,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         }
         
         // Partial fixes to a long standing bug, to keep the caret inside the `UITextView` always visible
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextViewTextDidChange, object: textView, queue: OperationQueue.main) { (notification) -> Void in
+        NotificationCenter.default.addObserver(forName: UITextView.textDidChangeNotification, object: textView, queue: OperationQueue.main) { (notification) -> Void in
             if textView.textStorage.string.hasSuffix("\n") {
                 CATransaction.setCompletionBlock({ () -> Void in
                     self.scrollToCaret(textView, animated: false)

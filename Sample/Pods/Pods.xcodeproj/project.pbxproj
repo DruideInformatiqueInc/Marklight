@@ -609,6 +609,40 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0700E25675F22A6A80E40410A7BD7191 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19F13916C70DEEB387CF03E39049C2AE /* Marklight-macOS.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Marklight-macOS/Marklight-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Marklight-macOS/Marklight-macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Marklight-macOS/Marklight-macOS.modulemap";
+				PRODUCT_MODULE_NAME = Marklight;
+				PRODUCT_NAME = Marklight;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		12F9BEBA59F99325F5A0A8C15E7F0C83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -710,7 +744,7 @@
 			};
 			name = Release;
 		};
-		41067FE90436625B83709BA439797DE9 /* Debug */ = {
+		3A391B13D61B3EBDEEA5311DA7D8066C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2532C5D74DAD74492C9670E07D6C591 /* Marklight-iOS.debug.xcconfig */;
 			buildSettings = {
@@ -736,42 +770,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		458A13B4C702181B666FE22B4BEE82F8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19F13916C70DEEB387CF03E39049C2AE /* Marklight-macOS.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/Marklight-macOS/Marklight-macOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Marklight-macOS/Marklight-macOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Marklight-macOS/Marklight-macOS.modulemap";
-				PRODUCT_MODULE_NAME = Marklight;
-				PRODUCT_NAME = Marklight;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -835,40 +835,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		704E849097EAE7DDD069B2EAA3C5856E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39861F2FD6EF5B373A50EA48F8A68B7B /* Marklight-iOS.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Marklight-iOS/Marklight-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Marklight-iOS/Marklight-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Marklight-iOS/Marklight-iOS.modulemap";
-				PRODUCT_MODULE_NAME = Marklight;
-				PRODUCT_NAME = Marklight;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -943,6 +909,74 @@
 			};
 			name = Debug;
 		};
+		CB5D3C40A608AC109AB41FF2AA2FE76D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE9C7FF7CA1CD18F14EF459936AA40BD /* Marklight-macOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Marklight-macOS/Marklight-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Marklight-macOS/Marklight-macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Marklight-macOS/Marklight-macOS.modulemap";
+				PRODUCT_MODULE_NAME = Marklight;
+				PRODUCT_NAME = Marklight;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D297D1F24265A9801C46162C72FD8DAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39861F2FD6EF5B373A50EA48F8A68B7B /* Marklight-iOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Marklight-iOS/Marklight-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Marklight-iOS/Marklight-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Marklight-iOS/Marklight-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Marklight;
+				PRODUCT_NAME = Marklight;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		DBBB62EA0E8E7C1B00E7820E5EBC4491 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C0B4B0FBFCFC3157A825CF985225E6A /* Pods-Marklight-Marklight Sample.release.xcconfig */;
@@ -979,40 +1013,6 @@
 			};
 			name = Release;
 		};
-		EFE5A4B27BA010A0E05543B37943F54F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE9C7FF7CA1CD18F14EF459936AA40BD /* Marklight-macOS.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/Marklight-macOS/Marklight-macOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Marklight-macOS/Marklight-macOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Marklight-macOS/Marklight-macOS.modulemap";
-				PRODUCT_MODULE_NAME = Marklight;
-				PRODUCT_NAME = Marklight;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1037,8 +1037,8 @@
 		3CD872895FB6AE999399AE754B1AA2E2 /* Build configuration list for PBXNativeTarget "Marklight-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				458A13B4C702181B666FE22B4BEE82F8 /* Debug */,
-				EFE5A4B27BA010A0E05543B37943F54F /* Release */,
+				0700E25675F22A6A80E40410A7BD7191 /* Debug */,
+				CB5D3C40A608AC109AB41FF2AA2FE76D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1055,8 +1055,8 @@
 		A0C8A94EFC0F8A1784EBF4DF3DDC2912 /* Build configuration list for PBXNativeTarget "Marklight-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41067FE90436625B83709BA439797DE9 /* Debug */,
-				704E849097EAE7DDD069B2EAA3C5856E /* Release */,
+				3A391B13D61B3EBDEEA5311DA7D8066C /* Debug */,
+				D297D1F24265A9801C46162C72FD8DAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -68,15 +68,15 @@ class MarklightColorStub {}
 
 public extension MarklightColor {
     static var syntaxColor: MarklightColor {
-        return MarklightColor(named: MarklightColor.Name("Syntax"), bundle: Bundle(for: MarklightColorStub.self))!
+        return MarklightColor(named: "Syntax", bundle: Bundle(for: MarklightColorStub.self))!
     }
 
     static var codeColor: MarklightColor {
-        return MarklightColor(named: MarklightColor.Name("Code"), bundle: Bundle(for: MarklightColorStub.self))!
+        return MarklightColor(named: "Code", bundle: Bundle(for: MarklightColorStub.self))!
     }
 
     static var quoteColor: MarklightColor {
-        return MarklightColor(named: MarklightColor.Name("Quote"), bundle: Bundle(for: MarklightColorStub.self))!
+        return MarklightColor(named: "Quote", bundle: Bundle(for: MarklightColorStub.self))!
     }
 }
 
