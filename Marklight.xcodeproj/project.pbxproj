@@ -33,6 +33,7 @@
 		95C46D851C33E1300070AEDC /* MarklightTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C46D831C33E1300070AEDC /* MarklightTextStorage.swift */; };
 		DA56B649248A9FDF003FC208 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA56B648248A9FDF003FC208 /* Media.xcassets */; };
 		DA56B64A248A9FDF003FC208 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA56B648248A9FDF003FC208 /* Media.xcassets */; };
+		DA56B6DD248ADB4F003FC208 /* MarklightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C46D771C33E11A0070AEDC /* MarklightTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503683FA1F209689006A7344 /* MarklightTextProcessorTests.swift in Sources */,
+				DA56B6DD248ADB4F003FC208 /* MarklightTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
