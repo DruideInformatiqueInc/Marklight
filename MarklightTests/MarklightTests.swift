@@ -129,15 +129,72 @@ class MarklightTests: XCTestCase {
         } else {
             XCTFail()
         }
-        if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 8, effectiveRange: &range!) as? MarklightColor {
+        if let attribute = self.textStorage.attribute(.link, at: 1, effectiveRange: &range!) as? String {
+            XCTAssert(attribute == "http://www.example.com")
+            XCTAssert(range?.length == 7)
+        } else {
+            XCTFail()
+        }
+				if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 8, effectiveRange: &range!) as? MarklightColor {
             XCTAssert(attribute == MarklightColor.syntaxColor)
             // TODO: exetend test
             XCTAssert(range?.length == 2)
         } else {
             XCTFail()
         }
+        if let attribute = self.textStorage.attribute(.link, at: 10, effectiveRange: &range!) as? String {
+            XCTAssert(attribute == "http://www.example.com")
+            XCTAssert(range?.length == 22)
+        } else {
+            XCTFail()
+        }
+				if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 32, effectiveRange: &range!) as? MarklightColor {
+            XCTAssert(attribute == MarklightColor.syntaxColor)
+            // TODO: exetend test
+            XCTAssert(range?.length == 1)
+        } else {
+            XCTFail()
+        }
     }
-    
+
+    func testAnchorMailTo() {
+        let string = ["[Example](mailto:test@example.com)",""].joined(separator: "\n")
+        let attributedString = NSAttributedString(string: string)
+        self.textStorage.replaceCharacters(in: NSMakeRange(0, 0), with: attributedString)
+        var range : NSRange? = NSMakeRange(0, 1)
+        if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range!) as? MarklightColor {
+            XCTAssert(attribute == MarklightColor.syntaxColor)
+            XCTAssert(range?.length == 1)
+        } else {
+            XCTFail()
+        }
+        if let attribute = self.textStorage.attribute(.link, at: 1, effectiveRange: &range!) as? String {
+            XCTAssert(attribute == "mailto:test@example.com")
+            XCTAssert(range?.length == 7)
+        } else {
+            XCTFail()
+        }
+				if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 8, effectiveRange: &range!) as? MarklightColor {
+            XCTAssert(attribute == MarklightColor.syntaxColor)
+            // TODO: exetend test
+            XCTAssert(range?.length == 2)
+        } else {
+            XCTFail()
+        }
+        if let attribute = self.textStorage.attribute(.link, at: 10, effectiveRange: &range!) as? String {
+            XCTAssert(attribute == "mailto:test@example.com")
+            XCTAssert(range?.length == 23)
+        } else {
+            XCTFail()
+        }
+				if let attribute = self.textStorage.attribute(NSAttributedString.Key.foregroundColor, at: 33, effectiveRange: &range!) as? MarklightColor {
+            XCTAssert(attribute == MarklightColor.syntaxColor)
+            // TODO: exetend test
+            XCTAssert(range?.length == 1)
+        } else {
+            XCTFail()
+        }
+    }
     // TODO: test anchor inline?
     
     func testImage() {

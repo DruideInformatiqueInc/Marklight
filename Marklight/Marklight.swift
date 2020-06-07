@@ -309,8 +309,8 @@ public struct Marklight {
                 styleApplier.addAttribute(.foregroundColor, value: Marklight.syntaxColor, range: innerRange)
                 
                 var _range = innerRange
-                _range.location = range.location + 1
-                _range.length = range.length - 2
+                _range.location = _range.location + 1
+                _range.length = _range.length - 2
                 
                 let substring = textStorageNSString.substring(with: _range)
                 guard substring.lengthOfBytes(using: .utf8) > 0 else { return }
@@ -903,7 +903,8 @@ public struct Marklight {
     
     public static let italicRegex = MarklightRegex(pattern: italicPattern, options: [.allowCommentsAndWhitespace, .anchorsMatchLines])
     
-    fileprivate static let autolinkPattern = "((https?|ftp):[^'\">\\s]+)"
+    // regex taken from https://urlregex.com
+    fileprivate static let autolinkPattern = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
     
     public static let autolinkRegex = MarklightRegex(pattern: autolinkPattern, options: [.allowCommentsAndWhitespace, .dotMatchesLineSeparators])
     
