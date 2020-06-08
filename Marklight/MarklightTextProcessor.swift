@@ -18,11 +18,6 @@ open class MarklightTextProcessor {
     // MARK: Syntax highlight customisation
 
     /**
-     Color used to highlight markdown syntax. Default value is light grey.
-     */
-    open var syntaxColor = MarklightColor.syntaxColor
-
-    /**
      Default font used for normal text. Default value is a monospaced font
      */
     open var defaultFont = MarklightFont.monospacedFont
@@ -33,17 +28,32 @@ open class MarklightTextProcessor {
     open var codeFont = MarklightFont.monospacedFont
 
     /**
-     `MarklightColor` used for blocks and inline code. Default value is dark grey.
-     */
-    open var codeColor = MarklightColor.codeColor
-
-    /**
      Font used for quote blocks. Default value is a monospaced font
      */
     open var quoteFont = MarklightFont.monospacedFont
 
     /**
-     `MarklightColor` used for quote blocks. Default value is dark grey.
+     Font used for bold  blocks. Default value is a monospaced bold font
+     */
+    open var boldFont = MarklightFont.monospacedBoldFont
+
+    /**
+     Font used for italic blocks. Default value is a monospaced italic font
+     */
+    open var italicFont = MarklightFont.monospacedItalicFont
+
+    /**
+     Color used to highlight markdown syntax. Default value is light grey.
+     */
+    open var syntaxColor = MarklightColor.syntaxColor
+
+    /**
+     Color used for blocks and inline code. Default value is dark grey.
+     */
+    open var codeColor = MarklightColor.codeColor
+
+    /**
+     Color used for quote blocks. Default value is dark grey.
      */
     open var quoteColor = MarklightColor.quoteColor
 
@@ -71,19 +81,12 @@ open class MarklightTextProcessor {
 
         let editedAndAdjacentParagraphRange = self.editedAndAdjacentParagraphRange(in: string, editedRange: editedRange)
 
-        Marklight.syntaxColor = syntaxColor
-        Marklight.codeFont = codeFont
-        Marklight.codeColor = codeColor
-        Marklight.quoteFont = quoteFont
-        Marklight.quoteColor = quoteColor
-        Marklight.quoteIndendation = quoteIndendation
-        Marklight.hideSyntax = hideSyntax
-
         resetMarklightAttributes(
             styleApplier: styleApplier,
             range: editedAndAdjacentParagraphRange)
         Marklight.applyMarkdownStyle(
             styleApplier,
+            textProcessor: self,
             string: string,
             affectedRange: editedAndAdjacentParagraphRange)
 

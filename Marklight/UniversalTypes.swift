@@ -50,10 +50,6 @@
     public typealias MarklightFontDescriptor = NSFontDescriptor
 
     extension NSFont {
-        static func italicSystemFont(ofSize size: CGFloat) -> NSFont {
-            return NSFontManager().convert(NSFont.systemFont(ofSize: size), toHaveTrait: .italicFontMask)
-        }
-
 				func italic() -> NSFont {
 						return NSFontManager().convert(self, toHaveTrait: .italicFontMask)
 				}
@@ -99,13 +95,5 @@ public extension MarklightFont {
 
     static var monospacedItalicFont: MarklightFont {
         return self.monospacedFont.italic()
-    }
-
-    static var boldFont: MarklightFont {
-        return MarklightFont.boldSystemFont(ofSize: MarklightFont.systemFontSize)
-    }
-
-    static var italicFont: MarklightFont {
-        return MarklightFont.italicSystemFont(ofSize: MarklightFont.systemFontSize)
     }
 }
