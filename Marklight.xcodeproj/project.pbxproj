@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		500DC5461F1F473400FE8C3E /* Marklight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500DC53D1F1F473300FE8C3E /* Marklight.framework */; };
-		500DC5561F1F4BDC00FE8C3E /* Array+appending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DC5551F1F4BDC00FE8C3E /* Array+appending.swift */; };
 		500DC5571F1F508500FE8C3E /* MarklightTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C46D831C33E1300070AEDC /* MarklightTextStorage.swift */; };
 		500DC5581F1F50B100FE8C3E /* Marklight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C46D821C33E1300070AEDC /* Marklight.swift */; };
 		503683ED1F207DCD006A7344 /* MarklightTextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503683EC1F207DCD006A7344 /* MarklightTextProcessor.swift */; };
@@ -24,7 +23,6 @@
 		503683FC1F209F33006A7344 /* MarklightStyleApplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503683FB1F209F33006A7344 /* MarklightStyleApplier.swift */; };
 		503683FD1F209F33006A7344 /* MarklightStyleApplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503683FB1F209F33006A7344 /* MarklightStyleApplier.swift */; };
 		954847721F72781500C7C080 /* MarklightRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594D2401F56F22E00ED641C /* MarklightRegex.swift */; };
-		954847731F72781E00C7C080 /* Array+appending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DC5551F1F4BDC00FE8C3E /* Array+appending.swift */; };
 		9594D2411F56F22E00ED641C /* MarklightRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594D2401F56F22E00ED641C /* MarklightRegex.swift */; };
 		95C46D6C1C33E11A0070AEDC /* Marklight.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C46D6B1C33E11A0070AEDC /* Marklight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95C46D731C33E11A0070AEDC /* Marklight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C46D681C33E11A0070AEDC /* Marklight.framework */; };
@@ -58,7 +56,6 @@
 		500DC5401F1F473300FE8C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		500DC5451F1F473300FE8C3E /* Marklight macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marklight macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		500DC54C1F1F473400FE8C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		500DC5551F1F4BDC00FE8C3E /* Array+appending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+appending.swift"; sourceTree = "<group>"; };
 		503683EC1F207DCD006A7344 /* MarklightTextProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarklightTextProcessor.swift; sourceTree = "<group>"; };
 		503683EF1F208690006A7344 /* UniversalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTypes.swift; sourceTree = "<group>"; };
 		503683F21F2087B0006A7344 /* NSString+paragraphRangeAt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+paragraphRangeAt.swift"; sourceTree = "<group>"; };
@@ -166,7 +163,6 @@
 				95C46D831C33E1300070AEDC /* MarklightTextStorage.swift */,
 				503683EC1F207DCD006A7344 /* MarklightTextProcessor.swift */,
 				503683F51F2095E3006A7344 /* MarklightTextProcessingResult.swift */,
-				500DC5551F1F4BDC00FE8C3E /* Array+appending.swift */,
 				503683F21F2087B0006A7344 /* NSString+paragraphRangeAt.swift */,
 				95C46D6B1C33E11A0070AEDC /* Marklight.h */,
 				95C46D6D1C33E11A0070AEDC /* Info.plist */,
@@ -372,7 +368,6 @@
 				503683EE1F207DCD006A7344 /* MarklightTextProcessor.swift in Sources */,
 				503683FD1F209F33006A7344 /* MarklightStyleApplier.swift in Sources */,
 				503683F11F208690006A7344 /* UniversalTypes.swift in Sources */,
-				954847731F72781E00C7C080 /* Array+appending.swift in Sources */,
 				500DC5571F1F508500FE8C3E /* MarklightTextStorage.swift in Sources */,
 				954847721F72781500C7C080 /* MarklightRegex.swift in Sources */,
 				503683F71F2095E3006A7344 /* MarklightTextProcessingResult.swift in Sources */,
@@ -395,7 +390,6 @@
 			files = (
 				95C46D851C33E1300070AEDC /* MarklightTextStorage.swift in Sources */,
 				9594D2411F56F22E00ED641C /* MarklightRegex.swift in Sources */,
-				500DC5561F1F4BDC00FE8C3E /* Array+appending.swift in Sources */,
 				95C46D841C33E1300070AEDC /* Marklight.swift in Sources */,
 				503683F31F2087B0006A7344 /* NSString+paragraphRangeAt.swift in Sources */,
 				503683ED1F207DCD006A7344 /* MarklightTextProcessor.swift in Sources */,

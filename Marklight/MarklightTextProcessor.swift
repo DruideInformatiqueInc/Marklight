@@ -149,12 +149,12 @@ open class MarklightTextProcessor {
 
             guard #available(iOS 9.0, *) else { return baseStyles }
 
-            return baseStyles.appending(contentsOf: [
+						return baseStyles + [
                 UIFont.TextStyle.title1.rawValue,
                 UIFont.TextStyle.title2.rawValue,
                 UIFont.TextStyle.title3.rawValue,
                 UIFont.TextStyle.callout.rawValue
-                ])
+                ]
         }()
         
         guard supportedTextStyles.contains(self.fontTextStyle) else {
