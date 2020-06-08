@@ -32,7 +32,7 @@
     extension UIFont {
     		func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
     				let descriptor = fontDescriptor.withSymbolicTraits(traits)
-    				return UIFont(descriptor: descriptor!, size: self.pointSize) //size 0 means keep the size as it is
+    				return UIFont(descriptor: descriptor!, size: self.pointSize)
 				}
 				func italic() -> UIFont {
 						return self.withTraits(traits: .traitItalic)
@@ -40,7 +40,10 @@
 				func bold() -> UIFont {
 						return self.withTraits(traits: .traitBold)
 				}
-    }
+ 				func resize(size: CGFloat) -> UIFont {
+				    return UIFont(descriptor: fontDescriptor, size: size)
+			  }
+   }
 
 #elseif os(macOS)
     import AppKit
@@ -57,6 +60,10 @@
 				func bold() -> NSFont {
 						return NSFontManager().convert(self, toHaveTrait: .boldFontMask)
 				}
+				
+				func resize(size: CGFloat) -> NSFont {
+				    return NSFontManager().convert(self, toSize: size)
+			  }
     }
 #endif
 

@@ -70,6 +70,16 @@ open class MarklightTextProcessor {
     // MARK: Initializers
 
     public init() {}
+    
+    // MARK: Set font size
+    
+    open func changeFontSize(size: CGFloat) {
+        defaultFont = defaultFont.resize(size: size)
+        codeFont = codeFont.resize(size: size)
+        quoteFont = quoteFont.resize(size: size)
+        boldFont = boldFont.resize(size: size)
+        italicFont = italicFont.resize(size: size)
+		}
 
     // MARK: Syntax highlighting
 
